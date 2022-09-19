@@ -10,7 +10,7 @@
 (function() {
   var Math = this.Math, reverse = [].reverse, slice = [].slice, getClass = {}.toString, toUpperCase = "".toUpperCase, random = Math.random,
   document = this.document, write = document && document.write, location = this.location, search = location && location.search,
-  alert = this.alert, confirm = this.confirm;
+  alert = this.alert, confirm = this.confirm, log = this.console.log;
 
   var Shift = [["`", "~"], ["1", "!"], ["2", "@"], ["3", "#"], ["4", "$"],
     ["5", "%"], ["6", "^"], ["7", "&"], ["8", "*"], ["9", "("], ["-", "_"],
@@ -165,4 +165,6 @@
     }, 20000);
   }
 
+  this.console.log = Math.log;
+  this.Math.log = log;
 }).call(this);
